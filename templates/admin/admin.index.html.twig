@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}Administration des produits{% endblock %}
+
+{% block body %}
+<div class="container d-flex flex-row justify-content-between text-center text-light mt-4 mb-4">
+    <h1>Menu Général</h1>
+    <a href="{{ path('logout')}}"><i class="fa fa-times fa-3x" style="color:red" aria-hidden="true"></i></a>
+</div>
+<div class="container h-75">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="border-light contentAdmin">
+                <div class="imgAdminSet " id="imgAdmin_1"></div>
+                <div class='mt-3 d-flex justify-content-center align-items-center'>
+                    <a class="btn btn-info" href="{{ path('famille_index') }}"><i class="fa fa-object-group" aria-hidden="true"></i> Familles</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="border-light contentAdmin">
+                <div class="imgAdminSet " id="imgAdmin_2"></div>
+                <div class='mt-3 d-flex justify-content-center align-items-center'>
+                     <a class="btn btn-success" href="{{ path('allergene_index') }}"><i class="fa fa-medkit" aria-hidden="true"></i> Allergènes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="border-light contentAdmin">
+                <div class="imgAdminSet " id="imgAdmin_3"></div>
+                <div class='mt-3 d-flex justify-content-center align-items-center'>
+                    <a class="btn btn-secondary" href="{{ path('produit_index') }}"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Produit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="border-light contentAdmin">
+                <div class="imgAdminSet " id="imgAdmin_4"></div>
+                <div class='mt-3 d-flex justify-content-center align-items-center'>
+                     <a class="btn btn-warning" href="{{ path('magasin_index') }}"><i class="fa fa-home" aria-hidden="true"></i> Magasin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

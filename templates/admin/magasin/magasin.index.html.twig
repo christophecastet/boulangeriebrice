@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Magasin{% endblock %}
+
+{% block body %}
+
+    <h1 class="adminTitle mb-4">Magasin</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{message}}</div>
+    {% endfor %}
+
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered text-center">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nom</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for magasin in magasins %}
+            <tr>
+                <td>{{magasin.id}}</td>
+                <td>{{magasin.nom}}</td>
+                <td> <a href="{{path('magasin_edit', {id: magasin.id})}}" class="btn btn-secondary">Editer</a></td> 
+                <td>
+                    <form method="POST" class="d-inline-block" method="post" action="{{path('magasin_delete', {id: magasin.id})}}" onsubmit="return confirm('Cette action ne pourra pas être annulée. Êtes-vous sûr ?');">
+                         <input type="hidden" name="_token" value="{{csrf_token('delete' ~ magasin.id)}}">
+                         <input type="hidden" name="_method" value="DELETE">
+                         <button class="btn btn-danger">Supprimer</button>  
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>                
+    </table>
+</div>   
+<div class="container text-center">
+        <a  class="btn btn-primary" href="{{ path('magasin_new') }}">Créer un nouveau magasin</a>
+        <a class="btn btn-secondary" href="{{ path('admin_index') }}">Retour au menu</a>
+</div>    
+{% endblock %}

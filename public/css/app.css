@@ -1,0 +1,769 @@
+/************************************/
+/***********PAGES INDEX*************/
+/***********************************/
+
+
+/************GENERAL***************/
+body{
+    position:relative;
+}
+
+.container, body{
+    background-color:rgb(39, 39, 32) !important;
+}
+
+.rubriqueTitle{
+        font-family: ShadowsIntoLight;
+        font-weight: bold;
+        color:rgb(191, 191, 173);
+        letter-spacing: 0.2rem;
+        text-shadow: 0 0 0.2em #293133, 0 0 0.2em #293133
+}
+
+.title{
+    font-family: ShadowsIntoLight;
+    font-weight: bold;
+    color:rgb(191, 191, 173);
+    letter-spacing: 0.1;
+    
+}
+
+.fontShadows{
+    font-family: Ovo;
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.rubriqueDescription{
+    color:rgb(144, 144, 127);
+}
+
+.textColor{
+    color :rgb(90, 58, 34) 
+ }
+
+:target {
+    padding-top: 2.6em; 
+    margin-top: -2.6em; 
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/*BACK TO TOP*/
+#button {
+    display: inline-block;
+    background-color: rgb(191, 191, 173);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  #button:active {
+    background-color: #555;
+  }
+  #button.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  html, body { height: auto }
+/************FONTS***************/
+
+@font-face {
+    font-family: "ShadowsIntoLight";
+    src: url("/font/shadowsIntoLight/ShadowsIntoLight.eot"); /* IE9 Compat Modes */
+    src: url("/font/shadowsIntoLight/ShadowsIntoLight.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url("/font/shadowsIntoLight/ShadowsIntoLight.otf") format("opentype"), /* Open Type Font */
+      url("/font/shadowsIntoLight/ShadowsIntoLight.svg") format("svg"), /* Legacy iOS */
+      url("/font/shadowsIntoLight/ShadowsIntoLight.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("/font/shadowsIntoLight/ShadowsIntoLight.woff") format("woff"), /* Modern Browsers */
+      url("/font/shadowsIntoLight/ShadowsIntoLight.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Ovo';
+    src: url('/font/ovo/Ovo.eot');
+    src: url('/font/ovo/Ovo.eot?#iefix') format('embedded-opentype'),
+        url('/font/ovo/Ovo.woff2') format('woff2'),
+        url('/font/ovo/Ovo.woff') format('woff'),
+        url('/font/ovo/Ovo.ttf') format('truetype'),
+        url('/font/ovo/Ovo.svg#Ovo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/************NAV BAR***************/
+
+.opacity {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.fontSize{
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 2px black !important;
+}
+
+#logo{
+    margin:0;
+    padding: 0;
+}
+
+.custom-toggler {
+    background-color: rgba(255,228,181,0.5) !important;
+}
+.custom-toggler .navbar-toggler-icon { 
+    background-image: url( 
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important; 
+} 
+
+.navbar-toggler:focus, .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-link {color: #bbab94 !important;}
+.active, .nav-link:hover {color:	#F0E68C!important;}
+
+/************SLIDER***************/
+
+.sizeHeader > img {
+    height: 100vh;
+    width: 100%;
+}
+
+.main-text {
+    position: absolute;
+    top: 240px;
+    width: 96.66666666666666%;
+    color: #FFF;
+}
+.customTextSlider{
+    font-size: 2rem;
+}
+.shadowSlider{
+    text-shadow: 0 0 0.2em #293133, 0 0 0.2em #293133
+}
+
+.customTrophy {
+    display:block !important;
+}
+/************SLIDER-MEDIAQUERIES***************/
+
+/* Smaller than standard 960 (devices and browsers) */
+
+@media only screen and (max-width: 959px) {
+   
+   h1{
+       color: red !important;
+   }
+    .overlay{
+       background-color: transparent !important;
+   }
+   .responsiveContent{
+       display: none;
+   }
+   .main-text {
+       top:90px;
+   }
+   .fontShadows{
+       font-size: 2.4rem;
+   }
+   .customTextSlider{
+       font-size: 1.3rem;
+   }
+   #pdt1, #pdt2, #pdt3{
+    display: none !important;
+}
+    .fontSize{
+        font-size: 1rem;
+    }
+    #customLansdcapeSize{
+        max-height: 190px !important;
+    }
+    .customLogoNous{
+        background-color:transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
+    
+    .main-text {
+        top: 70px;
+    }
+    #textSlider{
+        font-size: 1rem;
+    }
+
+    #titleSlider{
+        font-size: 1.8rem;
+    }
+    .customBorderCardProduit{
+        margin-left: 8% !important;
+    }
+}
+
+@media (max-width: 992px){
+    .mobileMenu{
+        top:21px !important;
+    }
+}
+
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    h1{
+        color:blue !important;
+    }
+    .sizeHeader > img {
+        height: 50vh;
+        width: 100%;
+    }
+    .main-text {
+        position: absolute !important;
+        top: 0px !important;
+        width: 96.66666666666666%;
+        color: #FFF;
+    }
+    .customLogoNous{
+        background-color:transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+   
+   
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+   
+    
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+
+@media only screen and (max-width: 479px) {
+    
+    #slid1, #slid2, #slid3 {
+        height: 50vh;
+        width: 100%;
+    }
+}
+
+
+/************NOUS***************/
+
+#nousPict{
+    background-image: url("/img/boulangerieBriceNous.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #262626 ;
+}
+
+.customLogoNous{
+    background-color:transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+.separatorDisplayCustom {
+    float:left;
+    width: 10% !important;
+}
+/************SEPARATOR***************/
+
+#separateur{
+    background-image: url("/img/boulangerieBriceSeparateur.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    height:67vh ;
+    
+}
+
+@media screen and (max-width:992px) {
+    #separateur{
+        background-image: url("");
+        height:40vh ;
+    }
+}
+
+/************BOUTIQUES***************/
+
+.customSIze{
+    width: 70%;
+    background-color: rgb(61, 61, 54) !important;
+    border:none !important;
+    border-radius:10px !important;
+}
+
+.colorCustom{
+    background-color: rgb(61, 61, 54) !important;
+}
+
+.activeClick {
+    background-color: #F0E68C !important;
+  }
+
+  .bouton {
+      color: #bbab94 !important;
+
+}
+
+.activeClick, .bouton:hover {
+    background-color:#F0E68C!important;
+    color: rgb(61, 61, 54) !important;
+
+}
+
+.card-body h4{
+    font-size: 1rem;
+    
+}
+
+/************MODAL***************/
+
+.logoModal {
+    background-image:url('/img/boulangerieBriceLogo.png') ;
+    background-size: contain;
+    height: 100px;
+    width: 25%;
+    background-repeat: no-repeat;
+}
+
+.contentMap{
+    
+    height: 200px;
+    width: 100%;
+}
+
+#mapid { height: 100%; 
+    width: 100%;
+}
+
+
+#exampleModalLongTitle{
+    font-size: 2rem;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    text-align: left;
+}
+
+.marker-pin {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    background: rgb(39, 39, 32);
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+  }
+  
+  .marker-pin::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      margin: 3px 0 0 3px;
+      background: #fff;
+      position: absolute;
+      border-radius: 50%;
+   }
+  
+  .custom-div-icon i {
+     position: absolute;
+     width: 22px;
+     font-size: 22px;
+     left: 0;
+     right: 0;
+     margin: 10px auto;
+     text-align: center;
+  }
+  
+  .myPin{
+      height: 22px;
+      width: 22px;
+      background-image: url("/img/boulangerieBriceLogo.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+  }
+/************PRODUITS***************/
+
+.customProduit {
+    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+    -moz-filter: brightness(50%);
+    -o-filter: brightness(50%);
+    -ms-filter: brightness(50%);
+    cursor: pointer;
+}
+
+.content:hover .customProduit,
+.contnet:focus .customProduit{
+    transform:scale(1.2);
+}
+
+.customProduit{
+    transition: all .5s;
+}
+.overlayPdt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(39,39,32,0.7);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    line-height: 2rem;
+    
+  }
+  
+  .content:hover .overlayPdt {
+    height: 100%;
+  }
+
+/************MEDIAS***************/
+.customTransparent{
+
+    position: absolute;
+    color:white;
+    text-shadow: 0 0 0.2em #293133, 0 0 0.2em #293133;
+    background-color: transparent;
+    top:1850px;
+}
+
+#img_1:hover{
+    background-image: url("/img/boulangerieBrice_2.jpg");
+}
+
+
+
+/****************************************************************/
+/********************PAGES PRODUITS******************************/
+/****************************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+}
+.header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #FC466B;
+    position: fixed;
+    height: 60px!important;
+    overflow: hidden;
+    z-index: 10;
+}
+.main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
+}
+.mainInner{
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.mainInner div{
+    display:table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+}
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    margin-top: 60px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(180deg, #272720 0%, #616154 100%);
+}
+.sidebarMenuInner{
+    margin:0;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li{
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li span{
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+}
+.sidebarMenuInner li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 39px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+#sidebarMenu{
+    z-index: 999;
+}
+
+.header{
+    background-color: transparent !important;
+}
+
+
+.customColorAllergenes {
+    background-color: #BFBFAD !important; 
+}
+
+.customColorBody{
+    background-color: #90907F !important;
+}
+
+.customBorderCardProduit{
+    border:none !important;
+}
+
+
+
+.disponibilite{
+    display: none;
+}
+
+.hideFont {
+    display: none !important;
+}
+
+.customBorderCardProduit{
+    margin-left: 15%;
+}
+
+label, th, td{
+    color:white;
+}
+.sizeProduitDisplay{
+    height: 30vh !important;
+}
+
+.fontSizeShop {
+    font-size: 0.8rem ;
+}
+
+.allergeneShow{
+    background-color: #272720 !important;
+}
+
+.allergeneContent{
+    height: 50px;
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.typeAllergene{
+    display:none;
+    background-color: #bfbfad;
+    border-radius: 5px;
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    
+}
+
+ul .typeAllergene li {
+    display: inline;
+}
+
+/*********************************************/
+/********************PAGES ADMIN********************/
+/*********************************************/
+
+.adminTitle {
+    color:white;
+    text-shadow: 0 0 0.2em #293133, 0 0 0.2em #293133;
+    text-align: center;
+}
+
+input[type='checkbox'] {
+    display: block;
+}
+
+legend{
+    color: white !important;
+}
+
+.sizeAdminProducts{
+    height: 150px;
+    width: 150px;
+}
+.contentAdmin {
+    height: 50vh;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.imgAdminSet {
+    height: 36vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+#imgAdmin_1{
+    background-image: url("/img/category.png");
+}
+
+#imgAdmin_2{
+    background-image: url("/img/allergene.png");
+}
+#imgAdmin_3{
+    background-image: url("/img/product.png");
+}
+#imgAdmin_4{
+    background-image: url("/img/shop.png");
+}
+
+
+/*BORDER BLEU GOOGLE*/
+.form-control, #registration_form {
+    box-shadow: none!important;  
+}
+input, select, option:focus
+{
+    outline: 0px !important;
+    border: none!important;
+}
+
+
+

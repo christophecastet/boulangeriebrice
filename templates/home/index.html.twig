@@ -1,0 +1,359 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boulangerie Brice{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+<!--NAVBAR-->
+
+<nav class="navbar navbar-expand-lg navbar-light justify-content-sm-start fixed-top opacity ">
+      <div class="container-fluid">
+        <a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 p-0" href="#"><img id="logo" src="/img/boulangerieBriceLogo.png">
+        </a
+        >
+        <button class="navbar-toggler align-self-start mt-2 custom-toggler" type="button">
+          <span class="navbar-toggler-icon customBorder"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse navbar-light  p-3 p-lg-0 mt-5 mt-lg-0 d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end mobileMenu"
+          id="navbarSupportedContent"
+        >
+            <ul id="customLansdcapeSize" class="navbar-nav align-self-stretch">
+                <li class="nav-item active">
+                <a class=" nav-link fontSize" href="#nous">Nous <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fontSize" href="#boutiques">Nos boutiques</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fontSize" href="#medias">Médias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fontSize" href="#produit">Produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fontSize" href="#bb_contact">Nous contacter</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--SLIDER-->
+<header id="carouselExampleIndicators " class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item sizeHeader active">
+        <img src="/img/boulangerieBriceCroissant.jpg" class="d-block " id="slid1" alt="boulangerieBriceCroissant" title="boulangerieBriceCroissant">
+        </div>
+        <div class="carousel-item sizeHeader">
+        <img src="/img/boulangerieBricePain_2.jpg" class="d-block" id="slid2" alt="boulangerieBricePain_2" title="boulangerieBricePain_2">
+        </div>
+        <div class="carousel-item sizeHeader">
+        <img <img src="/img/boulangerieBricePain.jpg" class="d-block" id="slid3" alt="boulangerieBricePain" title="boulangerieBricePain">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</header>
+
+<!--TEXTE SLIDER-->
+<div class="main-text">
+    <div class="col-md-12 text-center">
+        <h1 class='shadowSlider fontShadows mb-4' id="titleSlider">Boulangerie Brice</h1>
+        <i class="fa fa-trophy fa-3x shadowSlider customTrophy" aria-hidden="true"></i>
+        <strong class='shadowSlider customTextSlider' id="textSlider">Meilleur croissant des Hauts de France!</strong>
+    </div>
+</div>
+
+
+<!-- NOUS -->
+
+<section class="container-fluid bg-light" id="nous">
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <h2 class="text-left title mt-4" >Team Brice</h2>
+            <img src="/img/boulangerieBriceLogo_2.png" class="mt-5 mg-fluid float-left customLogoNous img-thumbnail">
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="container mt-5 " id="nousPict"></div> 
+            <p class="mt-4 textColor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tellus sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam ac lacus leo. Nunc egestas, enim at tempor condimentum, sem quam convallis elit, nec interdum odio est nec arcu. Aliquam ac laoreet sem. Morbi viverra diam vel odio scelerisque, eget vulputate est blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+        </div>
+    </div>
+</section>
+
+<!-- BOUTIQUES -->
+     
+<section class="container-fluid mb-4" id="boutiques">
+     <div class="row">
+        <div class="col-md-6 text-left">
+            <h2 class="rubriqueTitle mt-4">Nos Boutiques</h2>
+        </div>
+    </div>
+    <div class="row mt-5  d-flex justify-content-around">    
+        <div class="col-md-2 mt-4">
+            <div class="card colorCustom mb-1">
+                <img src="/img/boulangerieBriceBoutique.jpg" alt="" title="" class="img-thumbnail mr-auto ml-auto mt-2 customSIze">
+                <div class="card-body">
+                    <h4 class="card-title fontShadows rubriqueDescription">Marcq-en-Barœul </h4>
+                    <a href="#" class="btn btn-outline-secondary bouton" data-toggle="modal" data-target="#exampleModalCenter" value="1" id="shop1">Plus</a>
+                </div>
+            </div>
+        </div> 
+        <div class="col-md-2 mt-4">
+            <div class="card colorCustom mb-1">
+                <img src="/img/boulangerieBriceBoutique.jpg" alt="" title="" class="img-thumbnail mr-auto ml-auto mt-2 customSIze">
+                <div class="card-body">
+                    <h4 class="card-title fontShadows rubriqueDescription">Marquette-lez-Lille</h4>
+                    <a href="#" class="btn btn-outline-secondary bouton" data-toggle="modal" data-target="#exampleModalCenter" value="2" id="shop2">Plus</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 jumboShopCustom">
+            <div class="jumbotron">
+                <h1 class="display-4">Hello, world!</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr class="my-4" >
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            </div>
+            
+        <!---OUVERTURE A VENIR-->
+        <!--
+        <div class="col-md-4">
+            <div class="card colorCustom mb-1">
+                <img src="/img/boulangerieBriceBoutique.jpg" alt="" title="" class="img-thumbnail mr-auto ml-auto mt-2 customSIze">
+                <div class="card-body">
+                    <h4 class="card-title fontShadows">test2</h4>
+                    <a href="#" class="btn btn-outline-secondary bouton" data-toggle="modal" data-target="#exampleModalCenter">Plus</a>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</section>
+
+<!-- MODAL -->
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header pb-0 d-flex align-items-center">
+        <div class='logoModal d-flex align-items-center'></div>
+        <h1 class="modal-title ml-5 title" id="exampleModalLongTitle">Boulangerie Brice</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-1 pr-0 d-flex align-items-center">
+                <ul class="p-0">
+                    <li class="text-center"><i class="fa fa-map-marker  fa-1x" aria-hidden="true"></i></li>
+                    <br>
+                    <li class="text-center"><i class="fa fa-mobile fa-1x" aria-hidden="true"></i></li>
+                    <li class="text-center"><i class="fa fa-envelope-o fa-1x" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+            <div class="col-md-5 pl-0 d-flex align-items-center" id="adresse"></div>
+            <div class="col-md-1 pr-0">
+                <ul class="p-0">
+                    <li class="center"><i class="fa fa-clock-o fa-1x" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+            <div class="col-md-2  pl-0" id="jour"></div>
+            <div class="col-md-3 pl-0" id="horaires"></div>
+        </div>
+        
+           
+        
+      </div>
+      <div class="modal-footer contentMap">
+            <div id="mapid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEPARATEUR -->
+<section class="container-fluid " id="separateur"></section>
+
+<!-- PRODUITS -->
+
+
+<div class="container-fluid" id="produit">
+    <div class="row d-flex justify-content-around">
+        <div class="col-md-3">
+            <h2 class="rubriqueTitle mt-4">Nos Produits</h2>
+            <div class="mt-5">
+                <p class="textColor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tellus sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam ac lacus leo. Nunc egestas, enim at tempor condimentum, sem quam convallis elit, nec interdum odio est nec arcu. Aliquam ac laoreet sem. Morbi viverra diam vel odio scelerisque, eget vulputate est blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+            </div>
+        </div>
+        <div class="col-md-6  galleryContent" id='test'>
+            <div class="row">
+                <div class="col-md-4 p-0 mt-4 col-xs-12 col-sm-12 overflow-hidden content">
+                    <img src="/img/produits/boulangerieBriceProduit1.jpeg"  class="card-img-top h-100 w-100 customProduit" title="boulangerieBriceProduit" alt="boulangerieBriceProduits">
+                        <a href="{{ path('nos_produit_pain') }}" target="_self"><div id="pdt1" class=" responsiveContent overlayPdt d-flex align-items-center justify-content-center"><span class="responsiveContent">Nos Pains</span></div></a>
+                </div>
+                <div class="col-md-4 p-0 mt-4 col-xs-12 col-sm-12 overflow-hidden content">
+                    <img src="/img/produits/boulangerieBriceProduit2.jpeg" class="card-img-top h-100 w-100 customProduit" title="boulangerieBriceProduit" alt="boulangerieBriceProduits">
+                        <a href="{{ path('nos_produit_viennoiserie') }}" target="_self"><div id="pdt2" class="responsiveContent overlayPdt d-flex align-items-center justify-content-center"><span class="responsiveContent">Nos Viennoiseries</span></div></a>
+                </div>
+                 <div class="col-md-4 p-0 mt-4 col-xs-12 col-sm-12 overflow-hidden content">
+                    <img src="/img/produits/boulangerieBriceProduit3.jpeg" class="card-img-top h-100 w-100 customProduit" title="boulangerieBriceProduit" alt="boulangerieBriceProduits">
+                        <a href="{{ path('nos_produit_cake') }}" target="_self"><div id="pdt3" class="responsiveContent overlayPdt d-flex align-items-center justify-content-center"><span class="responsiveContent">Nos Cakes</span></div></a>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-md-4 p-0 col-xs-12 col-sm-12 overflow-hidden content responsiveContent">
+                    <img src="/img/produits/boulangerieBriceProduit4.jpeg" class="card-img-top h-100 w-100 customProduit" title="boulangerieBriceProduit" alt="boulangerieBriceProduits">
+                        <a href="{{ path('nos_produit_diver') }}" target="_self"><div class=" responsiveContent overlayPdt d-flex align-items-center justify-content-center"><span class="responsiveContent">Nos Pains</span></div></a>
+                </div>
+                <div class="col-md-4 p-0 col-xs-12 col-sm-12 overflow-hidden content responsiveContent">
+                    <img src="/img/produits/boulangerieBriceProduit5.jpeg" class="card-img-top h-100 w-100 customProduit"  title="boulangerieBriceProduit" alt="boulangerieBriceProduits">
+                        <a href="{{ path('nos_produit_cake') }}" target="_self"><div class=" responsiveContent overlayPdt d-flex align-items-center justify-content-center"><span class="responsiveContent">Nos Pains</span></div></a>
+                </div>
+                 <div class="col-md-4 p-0 col-xs-12 col-sm-12 overflow-hidden content responsiveContent">
+                    <img src="/img/produits/boulangerieBriceProduit6.jpeg" class="card-img-top h-100 w-100 customProduit" title="boulangerieBriceProduit" alt="boulangerieBriceProduits">
+                        <a href="{{ path('nos_produit_cake') }}" target="_self"><div class="responsiveContent overlayPdt d-flex align-items-center justify-content-center"><span class="responsiveContent">Nos Pains</span></div></a>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-md-4 p-0 col-xs-12 col-sm-12 overflow-hidden content responsiveContent">
+                    <img src="/img/produits/boulangerieBriceProduit7.jpeg" class="card-img-top h-100 w-100 customProduit" title="boulangerieBriceProduit" alt="boulangerieBriceProduits">
+                        <a href="{{ path('nos_produit_cake') }}" target="_self"><div class="responsiveContent overlayPdt d-flex align-items-center justify-content-center"><span class="responsiveContent">Nos Pains</span></div></a>
+                </div>
+                <div class="col-md-4 p-0 col-xs-12 col-sm-12 overflow-hidden content responsiveContent">
+                    <img src="/img/produits/boulangerieBriceProduit8.jpeg" class="card-img-top h-100 w-100 customProduit" title="boulangerieBriceProduit" alt="boulangerieBriceProduits">
+                        <a href="{{ path('nos_produit_cake') }}" target="_self"><div class="responsiveContent overlayPdt d-flex align-items-center justify-content-center"><span class="responsiveContent">Nos Pains</span></div></a>
+                </div>
+                 <div class="col-md-4 p-0 col-xs-12 col-sm-12 overflow-hidden content responsiveContent">
+                    <img src="/img/produits/boulangerieBriceProduit1.jpeg" class="card-img-top h-100 w-100 customProduit" title="boulangerieBriceProduit" alt="boulangerieBriceProduits">
+                        <a href="{{ path('nos_produit_cake') }}" target="_self"><div class="responsiveContent overlayPdt d-flex align-items-center justify-content-center"><span class="responsiveContent">Nos Pains</span></div></a>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+
+<section class="container-fluid bg-light mt-5" id="bb_contact">
+    <div class="row d-flex justify-content-around">
+        <div class="col-md-4 mt-3">
+            <div class="jumbotron">
+                <h1 class="display-4">Hello, world!</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            </div>
+        </div>
+        <div class="col-md-3 d-flex justify-content-center align-items-center flex-column">
+            <i class="fa fa-mobile fa-4x" aria-hidden="true"></i>
+            <p>06 06 06 06 06</p>
+        </div>
+        <div class="col-md-4 d-flex flex-column justify-content-center">
+            <h2 class="title mt-4">Nous Contacter</h2>
+            <hr class=" mt-3 separatorDisplayCustom solid">
+                <div class="form-group">
+                   <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Votre Nom / Prénom</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Nom / Prénom" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">Votre Mail</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Objet</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Objet" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">With textarea</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button type="button" class="btn btn-primary mb-5">Primary</button>
+        </div> 
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="container-fluid">
+    <p class="text-light text-center mt-3">© Boulangerie Brice 2020 - Sitemap - Crédits: Christophe Castet </p>
+</footer>
+
+<!-- Back To Top -->
+
+<a id="button"></a>
+
+
+<!-- MEDIAS -->
+
+<section class="container-fluid customTransparent" id="medias">
+     <div class="row ">
+        <div class="col-md-6">
+            <h2 class="rubriqueTitle mt-4">Médias</h2>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <i class="fa fa-trophy fa-3x shadowSlider customTrophy text-center" aria-hidden="true"></i>
+            <h3 class="text-center">Meilleur croissant des Hauts de France</h3>
+            <p class="text-center">Salon des métiers de bouche Horesta 2017</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fa fa-television fa-3x shadowSlider customTrophy text-center" aria-hidden="true"></i>
+            <h3 class="text-center">La meilleure boulangerie de France</h3>
+            <p class="text-center">Emission diffusée sur M6 en 2019 </p>
+        </div>
+        <div class="col-md-3">
+            <i class="fa fa-trophy fa-3x shadowSlider customTrophy text-center" aria-hidden="true"></i>
+            <h3 class="text-center">Prix régional pour la meilleur de Noël</h3>
+            <p class="text-center">où j'ai pas trouvé^^</p>
+        </div>
+          <div class="col-md-3">
+            <i class="fa fa-instagram fa-3x shadowSlider customTrophy text-center" aria-hidden="true"></i>
+            <h3 class="text-center">Suivez nous sur Instagram</h3>
+            <p class="text-center">Salon des métiers de bouche Horesta 2017</p>
+        </div>
+    </div>       
+</section>
+
+
+
+
+
+
+{% endblock %}
+

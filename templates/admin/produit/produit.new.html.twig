@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nouveau Produit{% endblock %}
+{% block body %}
+<div class="container mt-4">
+    <h1 class="adminTitle mb-4">Nouveau Produit</h1>
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.nom) }}</div>
+         <div class="col-md-4">{{ form_row(form.famille) }}</div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.magasin) }}</div>
+        <div class="col-md-4">{{ form_row(form.designation) }}</div>
+        <div class="col-md-4">{{ form_row(form.imageFile) }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 d-flex flex-row">{{ form_row(form.allergene) }}</div>
+    </div>
+    {{ form_widget(form) }}
+    <div class="container d-flex justify-content-center mt-5">
+        <button class="btn btn-primary mr-4">{{ button_label|default('Créer') }}</button>
+        <a class="btn btn-secondary" href="{{ path('produit_index') }}">Retour à la liste</a>
+    </div>
+    {{ form_end(form) }}
+</div>  
+
+ {% block javascripts %}
+            <script>
+                $('.custom-file-input').on('change', function(event) {
+                    var inputFile = event.currentTarget;
+                    $(inputFile).parent()
+                        .find('.custom-file-label')
+                        .html(inputFile.files[0].name);
+                });
+            </script>
+        {% endblock %}
+{% endblock  %}
+
+

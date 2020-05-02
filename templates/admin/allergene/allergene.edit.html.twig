@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}Editer l' allergene{% endblock %}
+{% block body %}
+<div class="container mt-4">
+     <h1 class="adminTitle mb-4">Editer l'allergene</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+</div>       
+<div class="container d-flex justify-content-center mt-5">
+    <button class="btn btn-primary mr-4">{{ button_label|default('Ajouter') }}</button>
+    <a class="btn btn-secondary" href="{{ path('allergene_index') }}">Retour à la liste</a>
+</div>
+       {{ form_end(form) }}
+{% endblock  %}
