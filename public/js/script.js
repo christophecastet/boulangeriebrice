@@ -45,6 +45,8 @@ $(document).ready(function() {
   
 
 
+
+
 /*********LIEN ACTIF NAV BAR***********/
 
 let links = $('.nav-link');
@@ -172,11 +174,10 @@ $('.bouton').click(function() {
   });   
 });
 
+
 /******* BACK TO TOP ***************/
 
-
-$(document).ready(function() {
-  var btn = $('#button');
+var btn = $('#button');
 
 $(window).scroll(function() {
   if ($(window).scrollTop() > 300) {
@@ -188,10 +189,7 @@ $(window).scroll(function() {
 
 btn.on('click', function(e) {
   e.preventDefault();
-  console.log('cc');
   $('html, body').animate({scrollTop:0}, '300');
 });
-
-})
 
 

@@ -16,7 +16,7 @@ class ProduitController extends AbstractController
 {
    
      /**
-     * @Route("/nos.produits.pain", name="nos_produit_pain")
+     * @Route("/NosPains", name="nos_produit_pain")
      */
     public function pain() 
     {
@@ -36,7 +36,7 @@ class ProduitController extends AbstractController
     
 
       /**
-     * @Route("/nos.produits.viennoiserie", name="nos_produit_viennoiserie")
+     * @Route("/NosViennoiseries", name="nos_produit_viennoiserie")
      */
     public function viennoiserie() 
     {
@@ -55,7 +55,7 @@ class ProduitController extends AbstractController
     }
 
      /**
-     * @Route("/nos.produits.cake", name="nos_produit_cake")
+     * @Route("/NosCakes", name="nos_produit_cake")
      */
     public function cake() 
     {
@@ -74,7 +74,7 @@ class ProduitController extends AbstractController
     }
 
      /**
-     * @Route("/nos.produits.diver", name="nos_produit_diver")
+     * @Route("/NosDivers", name="nos_produit_diver")
      */
     public function diver() 
     {

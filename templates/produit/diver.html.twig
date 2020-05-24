@@ -6,6 +6,7 @@
         
             <link href="{{ asset('/css/app.css') }}" type="text/css" rel="stylesheet">
             <link href="{{ asset('/css/styles.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('/css/produit.css') }}" type="text/css" rel="stylesheet">
             <link href="{{ asset('/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
             <link rel="stylesheet" href="{{ asset('/font-awesome/css/font-awesome.min.css') }}">
             
@@ -43,12 +44,14 @@
 <div class="container text-center  mt-4 mb-4"><h1 class="rubriqueTitle">Nos Divers</h1></div>
 <div class="container ">
     <div class="row d-flex flex-row">
+        {% for produit in produits %}
+        {% if produit.famille.type == 'Pains' %}
         <div class="col-md-4 mb-4">
             <div class="card  customBorderCardProduit position-relative" style="width: 18rem;">
-            <img class="card-img-top" src="/img/boulangerieBriceCake.jpg" alt="Card image cap">
-                <div class="card-body customColorBody">
-                   <h5 class="card-title lola">Diver</h5>
-                    <p class="card-text">un très bon pain au chocolat.</p>
+            <img class="card-img-top sizeProduitDisplay" src="/img/products/{{produit.fileName}}" alt="Card image cap ">
+                <div class="card-body customColorBody pb-5">
+                    <h5 class="card-title lola">{{produit.nom}}</h5>
+                    <p class="card-text">{{produit.designation}}<p>
                     <div class="row">
                          <div class="col-md-6 col-sm-6 mb-3 text-center col-xs-6 mb-3 text-center ">
                             <button type="button" class="btn btn-secondary  allergeneShow">Allergènes</button>  
@@ -58,47 +61,21 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center justify-content-center">
-                            <span class="mousseOver"><i  class="fa fa-info-circle fa-2x" aria-hidden="true"></i></span>
-                            <ul class="disponibilite" id="dispo">
-                                <li class="text-center">Marquettes-Lez-Lille</li>
+                        <div class="col-md-6 text-center col-sm-6 col-xs-6 ">
+                            <span id="dispo_{{produit.id}}" class="mousseOver h-100 mt-1"><i  class="fa fa-info-circle fa-2x" aria-hidden="true"></i></span>
+                            <ul class="disponibilite">
+                                 {% for magasin in produit.magasin %}
+                                <li class="text-center fontSizeShop">{{ magasin.nom }}</li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
+                    
                 </div>
-            </div>           
+            </div>   
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card  customBorderCardProduit" style="width: 18rem;">
-            <img class="card-img-top" src="/img/boulangerieBriceCake.jpg" alt="Card image cap">
-                <div class="card-body customColorBody">
-                   <h5 class="card-title lola">Croissantt</h5>
-                    <p class="card-text">un très bon pain au chocolat.</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                             <button type="button" class="btn customColorAllergenes" data-toggle="tooltip" data-placement="bottom" title="Iode, Moutarde">
-                             Allèrgenes
-                            </button  >
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center justify-content-center">
-                            <span class="mousseOver"><i  class="fa fa-info-circle fa-2x" aria-hidden="true"></i></span>
-                            <ul class="disponibilite" id="dispo">
-                                <li class="text-center">Marquettes-Lez-Lille</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>           
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class='jumbotron'>
-    {% for allergene in allergenes %}
-        <span> {{ allergene.id }} </span>
-        <span> {{ allergene.type }} </span>
-
-    {% endfor %}
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
 <footer class="container-fluid">

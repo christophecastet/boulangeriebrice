@@ -42,25 +42,38 @@ body{
     color :rgb(90, 58, 34) 
  }
 
-:target {
-    padding-top: 2.6em; 
-    margin-top: -2.6em; 
+section, div:target {
+    padding-top: 3em; 
+    margin-top: -3em; 
 }
 html{
     scroll-behavior: smooth;
 }
 
+.mediaHide{
+    display: none;
+}
+
+
+.linkLg{
+    display: block !important;
+}
+
+.linkSm{
+    display: none !important;
+}
 /*BACK TO TOP*/
+
 #button {
     display: inline-block;
-    background-color: rgb(191, 191, 173);
+    background-color: #90907F;
     width: 50px;
     height: 50px;
     text-align: center;
     border-radius: 4px;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 2%;
+    right: 2%;
     transition: background-color .3s, 
       opacity .5s, visibility .5s;
     opacity: 0;
@@ -78,17 +91,15 @@ html{
   }
   #button:hover {
     cursor: pointer;
-    background-color: #333;
+    background-color: #bfbfad;
   }
   #button:active {
-    background-color: #555;
+    background-color: #bfbfad;
   }
   #button.show {
     opacity: 1;
     visibility: visible;
   }
-
-  html, body { height: auto }
 /************FONTS***************/
 
 @font-face {
@@ -160,7 +171,8 @@ html{
 .main-text {
     position: absolute;
     top: 240px;
-    width: 96.66666666666666%;
+    left:15vw;
+    width: 75%;
     color: #FFF;
 }
 .customTextSlider{
@@ -177,7 +189,7 @@ html{
 
 /* Smaller than standard 960 (devices and browsers) */
 
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 568px) {
    
    h1{
        color: red !important;
@@ -225,6 +237,38 @@ html{
     .customBorderCardProduit{
         margin-left: 8% !important;
     }
+    
+    .customTransparent{
+        display: none;
+    }
+
+    .mediaHide{
+        display: block;
+        height: 25vh;
+        width: 100vw;
+        position: absolute;
+        bottom: 48%;
+    }
+
+    .linkLg{
+        display: none !important;
+    }
+
+    .linkSm{
+        display: block !important ;
+    }
+
+    .titleSize{
+        font-size: 1.2rem;
+    }
+    
+    .portraitIcon{
+        width: 15vw !important;
+    }
+
+    .portraitTexte{
+        width: 70vw !important;
+    }
 }
 
 @media (max-width: 992px){
@@ -233,7 +277,12 @@ html{
     }
 }
 
-
+@media only screen and (min-width: 568px) and (max-width: 740) {
+    h1{
+        color:purple
+    }
+  
+}
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -266,7 +315,48 @@ html{
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
    
-    
+    .customTransparent{
+        display: none;
+    }
+
+    .mediaHide{
+        display: block;
+        height:39vh;
+        width: 100vw;
+        position: absolute;
+        bottom: 65%;
+    }
+    .linkLg{
+        display: none !important;
+    }
+
+    .linkSm{
+        display: block !important ;
+    }
+    .titleSize{
+        font-size: 1.2rem;
+    }
+    #produits{
+        margin-top: 13%;
+    }
+
+    .main-text {
+        top: 70px;
+    }
+    #textSlider{
+        font-size: 1rem;
+    }
+
+    #titleSlider{
+        font-size: 1.8rem;
+    }
+    .portraitIcon{
+        width: 15vw !important;
+    }
+
+    .portraitTexte{
+        width: 60vw !important;
+    }
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -474,7 +564,7 @@ li{
     color:white;
     text-shadow: 0 0 0.2em #293133, 0 0 0.2em #293133;
     background-color: transparent;
-    top:1850px;
+    top:240vh;
 }
 
 #img_1:hover{
@@ -483,226 +573,7 @@ li{
 
 
 
-/****************************************************************/
-/********************PAGES PRODUITS******************************/
-/****************************************************************/
 
-@import url('https://fonts.googleapis.com/css?family=Varela+Round');
-html, body {
-    overflow-x: hidden;
-    height: 100%;
-}
-body {
-    background: #fff;
-    padding: 0;
-    margin: 0;
-    font-family: 'Varela Round', sans-serif;
-}
-.header {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 100%;
-    box-shadow: none;
-    background-color: #FC466B;
-    position: fixed;
-    height: 60px!important;
-    overflow: hidden;
-    z-index: 10;
-}
-.main {
-    margin: 0 auto;
-    display: block;
-    height: 100%;
-    margin-top: 60px;
-}
-.mainInner{
-    display: table;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-}
-.mainInner div{
-    display:table-cell;
-    vertical-align: middle;
-    font-size: 3em;
-    font-weight: bold;
-    letter-spacing: 1.25px;
-}
-#sidebarMenu {
-    height: 100%;
-    position: fixed;
-    left: 0;
-    width: 250px;
-    margin-top: 60px;
-    transform: translateX(-250px);
-    transition: transform 250ms ease-in-out;
-    background: linear-gradient(180deg, #272720 0%, #616154 100%);
-}
-.sidebarMenuInner{
-    margin:0;
-    padding:0;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
-}
-.sidebarMenuInner li{
-    list-style: none;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 20px;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-}
-.sidebarMenuInner li span{
-    display: block;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.50);
-}
-.sidebarMenuInner li a{
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-}
-input[type="checkbox"]:checked ~ #sidebarMenu {
-    transform: translateX(0);
-}
-
-input[type=checkbox] {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    display: none;
-}
-.sidebarIconToggle {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: absolute;
-    z-index: 99;
-    height: 100%;
-    width: 100%;
-    top: 39px;
-    left: 15px;
-    height: 22px;
-    width: 22px;
-}
-.spinner {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: #fff;
-}
-.horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    margin-top: 3px;
-}
-.diagonal.part-1 {
-    position: relative;
-    transition: all 0.3s;
-    box-sizing: border-box;
-    float: left;
-}
-.diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    margin-top: 3px;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    opacity: 0;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(135deg);
-    margin-top: 8px;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(-135deg);
-    margin-top: -9px;
-}
-#sidebarMenu{
-    z-index: 999;
-}
-
-.header{
-    background-color: transparent !important;
-}
-
-
-.customColorAllergenes {
-    background-color: #BFBFAD !important; 
-}
-
-.customColorBody{
-    background-color: #90907F !important;
-}
-
-.customBorderCardProduit{
-    border:none !important;
-}
-
-
-
-.disponibilite{
-    display: none;
-}
-
-.hideFont {
-    display: none !important;
-}
-
-.customBorderCardProduit{
-    margin-left: 15%;
-}
-
-label, th, td{
-    color:white;
-}
-.sizeProduitDisplay{
-    height: 30vh !important;
-}
-
-.fontSizeShop {
-    font-size: 0.8rem ;
-}
-
-.allergeneShow{
-    background-color: #272720 !important;
-}
-
-.allergeneContent{
-    height: 50px;
-    width: auto;
-
-    display: flex;
-    flex-direction: row;
-}
-
-.typeAllergene{
-    display:none;
-    background-color: #bfbfad;
-    border-radius: 5px;
-    margin-top: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-    
-}
-
-ul .typeAllergene li {
-    display: inline;
-}
 
 /*********************************************/
 /********************PAGES ADMIN********************/
