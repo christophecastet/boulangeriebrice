@@ -190,16 +190,15 @@ html{
 /* Smaller than standard 960 (devices and browsers) */
 
 @media only screen and (max-width: 568px) {
-   
+   /*
    h1{
        color: red !important;
    }
+   */
     .overlay{
        background-color: transparent !important;
    }
-   .responsiveContent{
-       display: none;
-   }
+  
    .main-text {
        top:90px;
    }
@@ -209,9 +208,11 @@ html{
    .customTextSlider{
        font-size: 1.3rem;
    }
-   #pdt1, #pdt2, #pdt3{
-    display: none !important;
-}
+  
+    .responsiveContent{
+        display: none;
+    }
+    
     .fontSize{
         font-size: 1rem;
     }
@@ -269,7 +270,26 @@ html{
     .portraitTexte{
         width: 70vw !important;
     }
+
+    #jour{
+        width: 25vw !important;
+        padding-right: 0 !important;
+    }
+
+    #horaires{
+        width: 45vw !important;
+       
+    }
+
+    .marginXs{
+        margin-left: 6% !important;
+    }
+
+    .rubriqueTitle{
+        font-size: 2rem;
+    }
 }
+
 
 @media (max-width: 992px){
     .mobileMenu{
@@ -352,11 +372,30 @@ html{
     }
     .portraitIcon{
         width: 15vw !important;
+        justify-content: flex-end !important;
     }
 
     .portraitTexte{
         width: 60vw !important;
     }
+
+    #jour{
+        width: 25vw !important;
+        padding-right: 0 !important;
+        display: flex;
+        justify-content: flex-end !important;
+        margin-right: 1% !important;
+    }
+    #clock{
+       margin-left: 13% !important;
+    }
+
+    #horaires{
+        width: 25vw !important;
+       
+    }
+
+
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -391,6 +430,10 @@ html{
 .separatorDisplayCustom {
     float:left;
     width: 10% !important;
+}
+
+.usText > strong {
+    font-weight:normal;
 }
 /************SEPARATOR***************/
 
