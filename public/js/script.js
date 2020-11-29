@@ -64,18 +64,22 @@ for(let i = 0; i <  size; i++) {
 var shop = $('.bouton');
 
 var adresse = [
-  shop1 = ['243 ch de la sourdaine','84000 Avignon',"06 06 06 06 06", "test@mail.com" ],
-  shop2 = ['350 ch du lavoir','75000 Paris','07 07 07 07 07',"test@mail.com"]
+  shop1 = ['10 contour de l\'Église','59700  Marcq-en-Barœul',"03 20 67 09 90"],
+  shop2 = ['4 rue de Wambrechies','59520  Marquette-Lez-Lille','03 20 56 29 09 '],
+  shop3 = ['3 place de la République','59290  Wasquehal','06 06 06 06 06 '],
+
 ];
 
 var jour = [
   shop1=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"],
-  shop2=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"]
+  shop2=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"],
+  shop3=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"]
 ];
 
 var horaire = [
-  shop1=["Fermé", "06h30 - 15h00  13h00 - 19h00", "06h30 - 15h00  13h00 - 19h00", "06h30 - 15h00  13h00 - 19h00", "06h30 - 15h00  13h00 - 19h00", "06h30 - 15h00  13h00 - 19h00", "07h30 - 12h30"],
-  shop2=["Fermé", "06h30 - 15h00  13h00 - 19h00", "06h30 - 15h00  13h00 - 19h00", "06h30 - 15h00  13h00 - 19h00", "06h30 - 15h00  13h00 - 19h00", "06h30 - 15h00  13h00 - 19h00", "07h30 - 12h30"]
+  shop1=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 17h00"],
+  shop2=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 12h00"],
+  shop3=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 12h00"]
 ];
 
 // CREATE LIST
@@ -97,6 +101,8 @@ function makeUL(array) {
 var mymap = L.map('mapid').setView([50.670808, 3.069450], 13);
 var shop1 = [50.666077, 3.072889];
 var shop2 = [50.677081, 3.066277];
+var shop3 = [50.66960, 3.12987];
+
 
 var tile = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -119,9 +125,9 @@ var icon = L.divIcon({
 /*************DISPLAY MODAL************/
 
 $('.bouton').click(function() {
-  
+  console.log('cc')
   var note = $(this).attr('value');
- 
+ console.log(note);
   if (note == 1) { 
       $("#adresse").children().remove();
       $("#jour").children().remove();
@@ -165,8 +171,29 @@ $('.bouton').click(function() {
     theMarker = L.marker(shop2, {
         icon: icon
       }).addTo(mymap); 
-  }
-
+  } else if (note == 3){
+    
+    $("#adresse").children().remove();
+    $("#jour").children().remove();
+    $("#horaires").children().remove();
+    document.getElementById('adresse').appendChild(makeUL(adresse[2]));
+    document.getElementById('jour').appendChild(makeUL(jour[2]));
+    document.getElementById('horaires').appendChild(makeUL(horaire[2]));
+    var li =  $('li');
+    for (let i=0; i<li.length;i++){
+     var acu = li[i];
+      if(acu.innerText === ".") {
+        acu.innerHTML = "<br>";
+      }
+    }
+    if (theMarker != undefined) {
+      mymap.removeLayer(theMarker);
+  };
+  theMarker = L.marker(shop3, {
+      icon: icon
+    }).addTo(mymap); 
+}
+  
   tile.addTo(mymap);
   // set size map on modal
   $('#exampleModalCenter').on('shown.bs.modal', function() {
