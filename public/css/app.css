@@ -470,7 +470,7 @@ html{
     background-color: #F0E68C !important;
   }
 
-  .bouton {
+.bouton {
       color: #bbab94 !important;
 
 }
@@ -485,6 +485,23 @@ html{
     font-size: 1rem;
     
 }
+
+.contentMiddleShop{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:2%;
+    align-items:center;
+    text-align:center;
+}
+
+.commentLink{
+    text-decoration:none;
+    color:#F5F5F5;
+}
+.commentLink:hover{
+   color:#F5F5F5;
+}
+
 
 /************MODAL***************/
 
@@ -614,10 +631,21 @@ li{
     background-image: url("/img/boulangerieBrice_2.jpg");
 }
 
+#weCanDoLink{
+    text-decoration:none; 
+    color:white;
+}
 
 
+/************CONTACT***************/
 
+.btnSubmitForm{
+    background-color:rgb(61, 61, 54) !important;
+}
 
+.btnSubmitForm:hover{
+    background-color:rgba(61, 61, 54, 0.5) !important;
+}
 /*********************************************/
 /********************PAGES ADMIN********************/
 /*********************************************/
