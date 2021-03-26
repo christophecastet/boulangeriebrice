@@ -83,6 +83,32 @@ var horaire = [
 ];
 
 // CREATE LIST
+/*function makeUL(array) {
+  
+  var list = document.createElement('ul');
+
+  for (var i = 0; i < array.length; i++) {
+    var item = document.createElement('li');
+    item.classList.add("li");
+    item.appendChild(document.createTextNode(array[i]));
+    
+    list.appendChild(item);
+  } 
+  return list;
+}*/
+
+const handleAdresse = (array) => {
+  let leftBoxWrapper = document.querySelector('#leftBoxWrapper')
+   array.forEach((elem, key) => {
+   p = document.createElement('div')
+    p.classList.add(`text_${key}`)
+    p.appendChild(document.createTextNode(elem))
+    leftBoxWrapper.appendChild(p)
+   console.log('p1', p);
+  })
+ console.log('p2', p);
+}
+
 function makeUL(array) {
   
   var list = document.createElement('ul');
@@ -96,7 +122,6 @@ function makeUL(array) {
   } 
   return list;
 }
-
  /*********LEAFLET***********/ 
 var mymap = L.map('mapid').setView([50.670808, 3.069450], 13);
 var shop1 = [50.666077, 3.072889];
@@ -132,19 +157,18 @@ $('.bouton').click(function() {
       $("#adresse").children().remove();
       $("#jour").children().remove();
       $("#horaires").children().remove();
-      document.getElementById('adresse').appendChild(makeUL(adresse[0]));
+      document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[0]));
       document.getElementById('jour').appendChild(makeUL(jour[0]));
       document.getElementById('horaires').appendChild(makeUL(horaire[0]));
      var li =  $('li');
      for (let i=0; i<li.length;i++){
       var acu = li[i];
-       if(acu.innerText === ".") {
+      if(acu.innerText === ".") {
          acu.innerHTML = "<br>";
-       }
-     }
+      }
+    }
      
-
-      if (theMarker != undefined) {
+    if (theMarker != undefined) {
         mymap.removeLayer(theMarker);
     };
     theMarker = L.marker(shop1, {
@@ -155,7 +179,7 @@ $('.bouton').click(function() {
       $("#adresse").children().remove();
       $("#jour").children().remove();
       $("#horaires").children().remove();
-      document.getElementById('adresse').appendChild(makeUL(adresse[1]));
+      document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[1]));
       document.getElementById('jour').appendChild(makeUL(jour[1]));
       document.getElementById('horaires').appendChild(makeUL(horaire[1]));
       var li =  $('li');
@@ -176,7 +200,7 @@ $('.bouton').click(function() {
     $("#adresse").children().remove();
     $("#jour").children().remove();
     $("#horaires").children().remove();
-    document.getElementById('adresse').appendChild(makeUL(adresse[2]));
+    document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[2]));
     document.getElementById('jour').appendChild(makeUL(jour[2]));
     document.getElementById('horaires').appendChild(makeUL(horaire[2]));
     var li =  $('li');
