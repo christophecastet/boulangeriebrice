@@ -70,31 +70,69 @@ var adresse = [
 
 ];
 
-var jour = [
-  shop1=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"],
-  shop2=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"],
-  shop3=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"]
-];
 
-var horaire = [
-  shop1=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 17h00"],
-  shop2=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 12h00"],
-  shop3=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 12h00"]
-];
+let hours = [
+  {
+    lundi: 'Fermé'
+  },
+  {
+    mardi: "06h30 - 20h00"
+  },
+  {
+    mercredi: "06h30 - 20h00"
+  },
+  {
+    jeudi: "06h30 - 20h00"
+  },
+  {
+    vendredi: "06h30 - 20h00"
+  },
+  {
+    samedi: "06h30 - 20h00"
+  },
+  {
+    dimanche: "7h00 - 12h00"
+  },
+
+]
 
 // CREATE LIST
-function makeUL(array) {
-  
-  var list = document.createElement('ul');
 
-  for (var i = 0; i < array.length; i++) {
-    var item = document.createElement('li');
-    item.classList.add("li");
-    item.appendChild(document.createTextNode(array[i]));
-    
-    list.appendChild(item);
-  } 
-  return list;
+const handleAdresse = (array) => {
+  let leftBoxWrapper = document.querySelector('#leftBoxWrapper')
+  array.forEach((elem, key) => {
+    div = document.createElement('div')
+    div.classList.add(`text_${key}`)
+    div.appendChild(document.createTextNode(elem))
+    leftBoxWrapper.appendChild(div)
+  })
+
+}
+
+const handleHours = (array) => {
+  let rightBoxWrapper = document.querySelector('#rightBoxWrapper')
+  array.forEach((elem, key) => {
+    for(const k in elem) {
+      dDays = document.createElement('div')
+      dHours = document.createElement('div')
+      dDays.classList.add(`days`)
+      dHours.classList.add('hours')
+      $('.days').each( (key) => {
+        $(this).css({'grid-row': key+1})
+      })
+      $('.hours').each( (key) => {
+        $(this).css({'grid-row': key+1})
+      })
+      dDays.appendChild(document.createTextNode(`${k} :`))
+      dHours.appendChild(document.createTextNode(elem[k]))
+      rightBoxWrapper.appendChild(dDays)
+      rightBoxWrapper.appendChild(dHours)
+    }
+  })
+}
+
+const handleClear = (text) => {
+    $(text).remove()
 }
 
  /*********LEAFLET***********/ 
@@ -125,67 +163,40 @@ var icon = L.divIcon({
 /*************DISPLAY MODAL************/
 
 $('.bouton').click(function() {
-  console.log('cc')
+  handleClear('.days')
+  handleClear('.hours')
+  handleHours(hours)
   var note = $(this).attr('value');
- console.log(note);
   if (note == 1) { 
-      $("#adresse").children().remove();
-      $("#jour").children().remove();
-      $("#horaires").children().remove();
-      document.getElementById('adresse').appendChild(makeUL(adresse[0]));
-      document.getElementById('jour').appendChild(makeUL(jour[0]));
-      document.getElementById('horaires').appendChild(makeUL(horaire[0]));
-     var li =  $('li');
-     for (let i=0; i<li.length;i++){
-      var acu = li[i];
-       if(acu.innerText === ".") {
-         acu.innerHTML = "<br>";
-       }
-     }
-     
+    handleClear(".text_0")
+    handleClear(".text_1")
+    handleClear(".text_2")
+    handleAdresse(adresse[0]);
 
-      if (theMarker != undefined) {
+    if (theMarker != undefined) {
         mymap.removeLayer(theMarker);
     };
     theMarker = L.marker(shop1, {
       icon:icon
     }).addTo(mymap); 
   } else if (note == 2){
-    
-      $("#adresse").children().remove();
-      $("#jour").children().remove();
-      $("#horaires").children().remove();
-      document.getElementById('adresse').appendChild(makeUL(adresse[1]));
-      document.getElementById('jour').appendChild(makeUL(jour[1]));
-      document.getElementById('horaires').appendChild(makeUL(horaire[1]));
-      var li =  $('li');
-      for (let i=0; i<li.length;i++){
-       var acu = li[i];
-        if(acu.innerText === ".") {
-          acu.innerHTML = "<br>";
-        }
-      }
-      if (theMarker != undefined) {
-        mymap.removeLayer(theMarker);
-    };
+    handleClear(".text_0")
+    handleClear(".text_1")
+    handleClear(".text_2")
+    handleAdresse(adresse[1]);
+
+    if (theMarker != undefined) {
+      mymap.removeLayer(theMarker);
+  };
     theMarker = L.marker(shop2, {
         icon: icon
       }).addTo(mymap); 
   } else if (note == 3){
-    
-    $("#adresse").children().remove();
-    $("#jour").children().remove();
-    $("#horaires").children().remove();
-    document.getElementById('adresse').appendChild(makeUL(adresse[2]));
-    document.getElementById('jour').appendChild(makeUL(jour[2]));
-    document.getElementById('horaires').appendChild(makeUL(horaire[2]));
-    var li =  $('li');
-    for (let i=0; i<li.length;i++){
-     var acu = li[i];
-      if(acu.innerText === ".") {
-        acu.innerHTML = "<br>";
-      }
-    }
+    handleClear(".text_0")
+    handleClear(".text_1")
+    handleClear(".text_2")
+    handleAdresse(adresse[2]);
+   
     if (theMarker != undefined) {
       mymap.removeLayer(theMarker);
   };
