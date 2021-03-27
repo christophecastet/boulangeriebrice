@@ -82,6 +82,31 @@ var horaire = [
   shop3=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 12h00"]
 ];
 
+let hours = [
+  {
+    lundi: 'Fermé'
+  },
+  {
+    mardi: "06h30 - 20h00"
+  },
+  {
+    mercredi: "06h30 - 20h00"
+  },
+  {
+    jeudi: "06h30 - 20h00"
+  },
+  {
+    vendredi: "06h30 - 20h00"
+  },
+  {
+    samedi: "06h30 - 20h00"
+  },
+  {
+    dimanche: "7h00 - 12h00"
+  },
+
+]
+
 // CREATE LIST
 /*function makeUL(array) {
   
@@ -99,14 +124,30 @@ var horaire = [
 
 const handleAdresse = (array) => {
   let leftBoxWrapper = document.querySelector('#leftBoxWrapper')
-   array.forEach((elem, key) => {
-   p = document.createElement('div')
-    p.classList.add(`text_${key}`)
-    p.appendChild(document.createTextNode(elem))
-    leftBoxWrapper.appendChild(p)
-   console.log('p1', p);
+  array.forEach((elem, key) => {
+    div = document.createElement('div')
+    div.classList.add(`text_${key}`)
+    div.appendChild(document.createTextNode(elem))
+    leftBoxWrapper.appendChild(div)
   })
- console.log('p2', p);
+
+}
+
+const handleHours = (array) => {
+  let rightBoxWrapper = document.querySelector('#rightBoxWrapper')
+  for (const key in array) {
+    console.log(key);
+    console.log(array[key]);
+    dDays = document.createElement('div')
+    dDays.classList.add(`days`)
+    $('.days').css({gridRow: key+1})
+    dDays.appendChild(document.createTextNode(array[key]))
+    rightBoxWrapper.appendChild(dDays)
+  }
+}
+handleHours(hours)
+const handleClear = (text) => {
+    $(text).remove()
 }
 
 function makeUL(array) {
@@ -154,17 +195,19 @@ $('.bouton').click(function() {
   var note = $(this).attr('value');
  console.log(note);
   if (note == 1) { 
-      $("#adresse").children().remove();
-      $("#jour").children().remove();
-      $("#horaires").children().remove();
-      document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[0]));
-      document.getElementById('jour').appendChild(makeUL(jour[0]));
-      document.getElementById('horaires').appendChild(makeUL(horaire[0]));
-     var li =  $('li');
-     for (let i=0; i<li.length;i++){
+    handleClear(".text_0")
+    handleClear(".text_1")
+    handleClear(".text_2")
+    $("#jour").children().remove();
+    $("#horaires").children().remove();
+    document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[0]));
+    document.getElementById('jour').appendChild(makeUL(jour[0]));
+    document.getElementById('horaires').appendChild(makeUL(horaire[0]));
+    var li =  $('li');
+    for (let i=0; i<li.length;i++){
       var acu = li[i];
       if(acu.innerText === ".") {
-         acu.innerHTML = "<br>";
+          acu.innerHTML = "<br>";
       }
     }
      
@@ -175,29 +218,31 @@ $('.bouton').click(function() {
       icon:icon
     }).addTo(mymap); 
   } else if (note == 2){
-    
-      $("#adresse").children().remove();
-      $("#jour").children().remove();
-      $("#horaires").children().remove();
-      document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[1]));
-      document.getElementById('jour').appendChild(makeUL(jour[1]));
-      document.getElementById('horaires').appendChild(makeUL(horaire[1]));
-      var li =  $('li');
-      for (let i=0; i<li.length;i++){
-       var acu = li[i];
-        if(acu.innerText === ".") {
-          acu.innerHTML = "<br>";
-        }
+    handleClear(".text_0")
+    handleClear(".text_1")
+    handleClear(".text_2")
+    $("#jour").children().remove();
+    $("#horaires").children().remove();
+    document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[1]));
+    document.getElementById('jour').appendChild(makeUL(jour[1]));
+    document.getElementById('horaires').appendChild(makeUL(horaire[1]));
+    var li =  $('li');
+    for (let i=0; i<li.length;i++){
+      var acu = li[i];
+      if(acu.innerText === ".") {
+        acu.innerHTML = "<br>";
       }
-      if (theMarker != undefined) {
-        mymap.removeLayer(theMarker);
-    };
+    }
+    if (theMarker != undefined) {
+      mymap.removeLayer(theMarker);
+  };
     theMarker = L.marker(shop2, {
         icon: icon
       }).addTo(mymap); 
   } else if (note == 3){
-    
-    $("#adresse").children().remove();
+    handleClear(".text_0")
+    handleClear(".text_1")
+    handleClear(".text_2")
     $("#jour").children().remove();
     $("#horaires").children().remove();
     document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[2]));
