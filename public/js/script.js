@@ -97,19 +97,6 @@ let hours = [
 ]
 
 // CREATE LIST
-/*function makeUL(array) {
-  
-  var list = document.createElement('ul');
-
-  for (var i = 0; i < array.length; i++) {
-    var item = document.createElement('li');
-    item.classList.add("li");
-    item.appendChild(document.createTextNode(array[i]));
-    
-    list.appendChild(item);
-  } 
-  return list;
-}*/
 
 const handleAdresse = (array) => {
   let leftBoxWrapper = document.querySelector('#leftBoxWrapper')
@@ -142,34 +129,12 @@ const handleHours = (array) => {
       rightBoxWrapper.appendChild(dHours)
     }
   })
- /*  for (const key in array) {
-    console.log(key);
-    console.log(array[key]);
-    dDays = document.createElement('div')
-    dDays.classList.add(`days`)
-    $('.days').css({gridRow: key+1})
-    dDays.appendChild(document.createTextNode(array[key]))
-    rightBoxWrapper.appendChild(dDays)
-  } */
 }
 
 const handleClear = (text) => {
     $(text).remove()
 }
 
-function makeUL(array) {
-  
-  var list = document.createElement('ul');
-
-  for (var i = 0; i < array.length; i++) {
-    var item = document.createElement('li');
-    item.classList.add("li");
-    item.appendChild(document.createTextNode(array[i]));
-    
-    list.appendChild(item);
-  } 
-  return list;
-}
  /*********LEAFLET***********/ 
 var mymap = L.map('mapid').setView([50.670808, 3.069450], 13);
 var shop1 = [50.666077, 3.072889];
@@ -206,16 +171,8 @@ $('.bouton').click(function() {
     handleClear(".text_0")
     handleClear(".text_1")
     handleClear(".text_2")
-    document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[0]));
+    handleAdresse(adresse[0]);
 
-    var li =  $('li');
-    for (let i=0; i<li.length;i++){
-      var acu = li[i];
-      if(acu.innerText === ".") {
-          acu.innerHTML = "<br>";
-      }
-    }
-     
     if (theMarker != undefined) {
         mymap.removeLayer(theMarker);
     };
@@ -226,14 +183,8 @@ $('.bouton').click(function() {
     handleClear(".text_0")
     handleClear(".text_1")
     handleClear(".text_2")
-    document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[1]));
-    var li =  $('li');
-    for (let i=0; i<li.length;i++){
-      var acu = li[i];
-      if(acu.innerText === ".") {
-        acu.innerHTML = "<br>";
-      }
-    }
+    handleAdresse(adresse[1]);
+
     if (theMarker != undefined) {
       mymap.removeLayer(theMarker);
   };
@@ -244,14 +195,8 @@ $('.bouton').click(function() {
     handleClear(".text_0")
     handleClear(".text_1")
     handleClear(".text_2")
-    document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[2]));
-    var li =  $('li');
-    for (let i=0; i<li.length;i++){
-     var acu = li[i];
-      if(acu.innerText === ".") {
-        acu.innerHTML = "<br>";
-      }
-    }
+    handleAdresse(adresse[2]);
+   
     if (theMarker != undefined) {
       mymap.removeLayer(theMarker);
   };
