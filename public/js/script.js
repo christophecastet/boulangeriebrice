@@ -70,17 +70,6 @@ var adresse = [
 
 ];
 
-var jour = [
-  shop1=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"],
-  shop2=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"],
-  shop3=["Lundi:", "Mardi:", ".", "Mercredi:", ".", "Jeudi:", ".", "Vendredi:", ".",  "Samedi:", ".",  "Dimanche:"]
-];
-
-var horaire = [
-  shop1=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 17h00"],
-  shop2=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 12h00"],
-  shop3=["Fermé", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "06h30 - 20h00", "07h00 - 12h00"]
-];
 
 let hours = [
   {
@@ -135,7 +124,25 @@ const handleAdresse = (array) => {
 
 const handleHours = (array) => {
   let rightBoxWrapper = document.querySelector('#rightBoxWrapper')
-  for (const key in array) {
+  array.forEach((elem, key) => {
+    for(const k in elem) {
+      dDays = document.createElement('div')
+      dHours = document.createElement('div')
+      dDays.classList.add(`days`)
+      dHours.classList.add('hours')
+      $('.days').each( (key) => {
+        $(this).css({'grid-row': key+1})
+      })
+      $('.hours').each( (key) => {
+        $(this).css({'grid-row': key+1})
+      })
+      dDays.appendChild(document.createTextNode(`${k} :`))
+      dHours.appendChild(document.createTextNode(elem[k]))
+      rightBoxWrapper.appendChild(dDays)
+      rightBoxWrapper.appendChild(dHours)
+    }
+  })
+ /*  for (const key in array) {
     console.log(key);
     console.log(array[key]);
     dDays = document.createElement('div')
@@ -143,9 +150,9 @@ const handleHours = (array) => {
     $('.days').css({gridRow: key+1})
     dDays.appendChild(document.createTextNode(array[key]))
     rightBoxWrapper.appendChild(dDays)
-  }
+  } */
 }
-handleHours(hours)
+
 const handleClear = (text) => {
     $(text).remove()
 }
@@ -191,18 +198,16 @@ var icon = L.divIcon({
 /*************DISPLAY MODAL************/
 
 $('.bouton').click(function() {
-  console.log('cc')
+  handleClear('.days')
+  handleClear('.hours')
+  handleHours(hours)
   var note = $(this).attr('value');
- console.log(note);
   if (note == 1) { 
     handleClear(".text_0")
     handleClear(".text_1")
     handleClear(".text_2")
-    $("#jour").children().remove();
-    $("#horaires").children().remove();
     document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[0]));
-    document.getElementById('jour').appendChild(makeUL(jour[0]));
-    document.getElementById('horaires').appendChild(makeUL(horaire[0]));
+
     var li =  $('li');
     for (let i=0; i<li.length;i++){
       var acu = li[i];
@@ -221,11 +226,7 @@ $('.bouton').click(function() {
     handleClear(".text_0")
     handleClear(".text_1")
     handleClear(".text_2")
-    $("#jour").children().remove();
-    $("#horaires").children().remove();
     document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[1]));
-    document.getElementById('jour').appendChild(makeUL(jour[1]));
-    document.getElementById('horaires').appendChild(makeUL(horaire[1]));
     var li =  $('li');
     for (let i=0; i<li.length;i++){
       var acu = li[i];
@@ -243,11 +244,7 @@ $('.bouton').click(function() {
     handleClear(".text_0")
     handleClear(".text_1")
     handleClear(".text_2")
-    $("#jour").children().remove();
-    $("#horaires").children().remove();
     document.getElementById('leftBoxWrapper').appendChild(handleAdresse(adresse[2]));
-    document.getElementById('jour').appendChild(makeUL(jour[2]));
-    document.getElementById('horaires').appendChild(makeUL(horaire[2]));
     var li =  $('li');
     for (let i=0; i<li.length;i++){
      var acu = li[i];
