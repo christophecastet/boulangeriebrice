@@ -443,6 +443,7 @@ html{
     background-repeat: no-repeat;
     background-attachment:fixed;
     height:67vh ;
+    position:relative;
     
 }
 
@@ -502,6 +503,9 @@ html{
    color:#F5F5F5;
 }
 
+.shopBottom{
+    height:20px;
+}
 
 /************MODAL***************/
 
@@ -624,7 +628,7 @@ li{
     color:white;
     text-shadow: 0 0 0.2em #293133, 0 0 0.2em #293133;
     background-color: transparent;
-    top:240vh;
+    top:10vh;
 }
 
 #img_1:hover{
