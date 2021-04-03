@@ -653,7 +653,12 @@ li{
 /*********************************************/
 /********************PAGES ADMIN********************/
 /*********************************************/
-
+table{
+    color:white !important;
+}
+label{
+    color:white !important;
+}
 .adminTitle {
     color:white;
     text-shadow: 0 0 0.2em #293133, 0 0 0.2em #293133;
