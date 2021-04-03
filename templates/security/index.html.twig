@@ -8,10 +8,11 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-{% if error  %}
+{% if error   %}
     <div class='alert alert-danger'>
-        {{ error.messageKey | trans(error.messagedata, 'security') }}
+       Identifiant ou mot de passe invalides!
     </div>
+
 {% endif %}
 <div class="container">
     <form action="{{ path('login') }}" method="post" class="form-signin">
@@ -28,7 +29,7 @@
                 <label for="password" class="col-sm-8 col-form-label text-muted">Mot de passe</label>
                 <input type="password" class="form-control" name='_password' id="password" placeholder="Password">
             </div> 
-            <div class="col-md-3">  
+            <div class="col-md-3 mt-4">  
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
             </div>
         </div>
