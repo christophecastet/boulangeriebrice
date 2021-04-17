@@ -25,17 +25,18 @@ class ProduitType extends AbstractType
                     'placeholder' => 'Nom'
                 ]
             ])
-            ->add('designation' , TextareaType::class, ['label'=>'Désignation'], [
-                'attr'=> [
-                    'placeholder' => 'Désignation'
-                ]
-            ])
-            ->add('imageFile', FileType::class, [
+            ->add('designation', TextareaType::class, array(
+                'label' => 'Désignation ',
+                'attr' => array(
+                    'placeholder' => 'Désignation',
+                )
+           ))
+            ->add('imageFile', FileType::class, array(
                 'required'=>false,
                 'label'=> 'Photo',
-                'attr'=>['placeholder'=>'Selectionnez une photo'],
-                
-            ])
+                    
+
+            ) )
          
             ->add('famille', EntityType::class, [
                 'class'=>Famille::class,

@@ -12,7 +12,11 @@
     <div class="row">
         <div class="col-md-4">{{ form_row(form.magasin) }}</div>
         <div class="col-md-4">{{ form_row(form.designation) }}</div>
-        <div class="col-md-4">{{ form_row(form.imageFile) }}</div>
+        <div class="col-md-4" >{{ form_row(form.imageFile, {
+             attr: {
+            'placeholder': 'Select an article image'
+        }
+        }) }}</div>
     </div>
     <div class="row">
         <div class="col-md-6 d-flex flex-row">{{ form_row(form.allergene) }}</div>
@@ -27,12 +31,32 @@
 
  {% block javascripts %}
             <script>
-                $('.custom-file-input').on('change', function(event) {
-                    var inputFile = event.currentTarget;
-                    $(inputFile).parent()
-                        .find('.custom-file-label')
-                        .html(inputFile.files[0].name);
-                });
+      {#          $('.test').change( (e) => {
+                  let test = document.querySelector('.test')
+                  console.log('test',test.value)
+                  console.log('e',e.target.files[0].name)
+                  test.setAttribute('value', e.target.files[0].name) 
+
+              })  #}
+              $('.custom-file-input').on('change', function(event) {
+                    let inputFile = event.currentTarget;
+                    console.log(inputFile.files[0].name)
+                    console.log('ets',  $(inputFile).parent().find('.custom-file-label') )
+                    $(inputFile).parent().find('.custom-file-label').text(inputFile.files[0].name);
+                    
+             });
+               
+          {#    
+                $('.custom-file-input').on('change', function(e) {
+                    var inputFile = e.currentTarget;
+                    console.log(inputFile.files[0].name)
+                    let moreText = inputFile.files[0].name
+                    $('#produit_imageFile').val( $('#produit_imageFile').val() + moreText)
+                   
+                    //$(inputFile).parent()
+                       // .find('.custom-file-label')
+                       // .html(inputFile.files[0].name); 
+                }); #}
             </script>
         {% endblock %}
 {% endblock  %}
