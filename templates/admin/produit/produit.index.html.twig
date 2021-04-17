@@ -47,7 +47,7 @@
                 
                 <td> <a href="{{path('produit_edit', {id: produit.id})}}" class="btn btn-secondary">Editer</a></td> 
                 <td>
-                    <form method="POST" class="d-inline-block" method="post" action="{{path('magasin_delete', {id: produit.id})}}" onsubmit="return confirm('Cette action ne pourra pas être annulée. Êtes-vous sûr ?');">
+                    <form method="POST" class="d-inline-block" method="post" action="{{path('produit_delete', {id: produit.id})}}" onsubmit="return confirm('Cette action ne pourra pas être annulée. Êtes-vous sûr ?');">
                          <input type="hidden" name="_token" value="{{csrf_token('delete' ~ produit.id)}}">
                          <input type="hidden" name="_method" value="DELETE">
                          <button class="btn btn-danger">Supprimer</button>  

@@ -300,12 +300,14 @@ class BackEndController extends AbstractController
     }
 
     /**
-     * @Route("produit/{id}", name="produit_delete", methods={"DELETE"})
+     * @Route("produit/{id}", name="produit_delete", methods={"DELETE"} )
+     * 
      */
     public function deleteProduit(Produit $produit,  Request $request)
     {
             if ($this -> isCsrfTokenValid('delete'.$produit->getId(), $request->get('_token'))) {
                 $entityManager = $this->getDoctrine()->getManager();
+                dump($produit);
                 $entityManager->remove($produit);
                 $entityManager->flush();
                 $this->addFlash('success', 'Produit supprimé avec succes!');
@@ -327,7 +329,7 @@ class BackEndController extends AbstractController
         if($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
             $this->addFlash('success', 'Produit modifié avec succes!');
-            return $this->redirectToRoute('magasin_index');
+            return $this->redirectToRoute('produit_index');
         }
         return $this->render("admin/produit/produit.edit.html.twig", [
             'produits'=> $produit,
