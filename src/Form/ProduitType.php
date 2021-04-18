@@ -25,37 +25,45 @@ class ProduitType extends AbstractType
                     'placeholder' => 'Nom'
                 ]
             ])
-            ->add('designation' , TextareaType::class, ['label'=>'Désignation'], [
-                'attr'=> [
-                    'placeholder' => 'Désignation'
-                ]
-            ])
-            ->add('imageFile', FileType::class, [
+            ->add('designation', TextareaType::class, array(
+                'label' => 'Désignation ',
+                'attr' => array(
+                    'placeholder' => 'Désignation',
+                )
+           ))
+            ->add('imageFile', FileType::class, array(
                 'required'=>false,
                 'label'=> 'Photo',
-                'attr'=>['placeholder'=>'Selectionnez une photo'],
-                
-            ])
+                    
+
+            ) )
          
             ->add('famille', EntityType::class, [
                 'class'=>Famille::class,
                 'choice_label'=>'type',
                 'expanded'=>false,
-                'multiple'=>false
+                'multiple'=>false,
+             
             ])
                 
             ->add('allergene', EntityType::class, [
                 'class'=>Allergene::class,
                 'choice_label'=>'type',
                 'expanded'=>true,
-                'multiple'=>true
+                'multiple'=>true,
+                'attr' => array(
+                    'class' => 'checkBoxAllergene'
+                )
             ])
 
             ->add('magasin' ,EntityType::class, [
                 'class'=>Magasin::class,
                 'choice_label'=>'nom',
                 'expanded'=>true,
-                'multiple'=>true
+                'multiple'=>true,
+                'attr' => array(
+                    'class' => 'checkBoxShop'
+                )
 
             ])
         ;

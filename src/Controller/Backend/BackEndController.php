@@ -284,12 +284,13 @@ class BackEndController extends AbstractController
 
         $form= $this->createForm(ProduitType::class, $produit);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($produit);
+            
             $em->flush();
             $this->addFlash('success', 'Produit crée avec succes!');
+           
             return $this->redirectToRoute('produit_index');
         }
         return $this->render("admin/produit/produit.new.html.twig", [

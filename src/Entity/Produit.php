@@ -28,16 +28,22 @@ class Produit
     
     /**
      * @var string|null
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string")
      */
     private $fileName;
 
     /**
     * @var file|null
-    * @Vich\UploadableField(mapping="produit_image", fileNameProperty="fileName")
+    * @Vich\UploadableField(mapping="product_image", fileNameProperty="fileName")
     */
     private $imageFile;
 
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var \DateTimeInterface|null
+     */
+    private $updatedAt;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -178,30 +184,32 @@ class Produit
         return $this->fileName;
     }
 
-    public function setFileName(string $fileName): self
+    public function setFileName(?string $fileName): void
     {
         $this->fileName = $fileName;
 
-        return $this;
     }
 
 
-    /**
-     * @return null|File
-     */
     public function getImageFile() : ?file
     {
         return $this->imageFile;
     }
 
     /**
-     * @param null|File $imageFile
-     * @return Produit
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     * 
      */
-    public function setImageFile( $imageFile)
+    public function setImageFile(?File $imageFile=null) : void
     {
         $this->imageFile = $imageFile;
-        return $this;
+
+        if(null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+        
     }
  
 }
