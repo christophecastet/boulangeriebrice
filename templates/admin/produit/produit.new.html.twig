@@ -31,13 +31,7 @@
 
  {% block javascripts %}
             <script>
-      {#          $('.test').change( (e) => {
-                  let test = document.querySelector('.test')
-                  console.log('test',test.value)
-                  console.log('e',e.target.files[0].name)
-                  test.setAttribute('value', e.target.files[0].name) 
-
-              })  #}
+                
               $('.custom-file-input').on('change', function(event) {
                     let inputFile = event.currentTarget;
                     console.log(inputFile.files[0].name)
@@ -45,18 +39,7 @@
                     $(inputFile).parent().find('.custom-file-label').text(inputFile.files[0].name);
                     
              });
-               
-          {#    
-                $('.custom-file-input').on('change', function(e) {
-                    var inputFile = e.currentTarget;
-                    console.log(inputFile.files[0].name)
-                    let moreText = inputFile.files[0].name
-                    $('#produit_imageFile').val( $('#produit_imageFile').val() + moreText)
-                   
-                    //$(inputFile).parent()
-                       // .find('.custom-file-label')
-                       // .html(inputFile.files[0].name); 
-                }); #}
+    
             </script>
         {% endblock %}
 {% endblock  %}

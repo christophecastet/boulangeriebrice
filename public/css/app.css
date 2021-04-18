@@ -656,9 +656,7 @@ li{
 table{
     color:white !important;
 }
-label{
-    color:white !important;
-}
+
 .adminTitle {
     color:white;
     text-shadow: 0 0 0.2em #293133, 0 0 0.2em #293133;
@@ -706,6 +704,15 @@ legend{
 }
 
 
+.checkBoxAllergene{
+    color:white !important;
+    margin-left: 32%;
+}
+
+.checkBoxShop{
+    color:white !important;
+    margin-left: 7%;
+}
 /*BORDER BLEU GOOGLE*/
 .form-control, #registration_form {
     box-shadow: none!important;  
