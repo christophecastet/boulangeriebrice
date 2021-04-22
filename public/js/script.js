@@ -228,8 +228,15 @@ $(window).scroll(function() {
 btn.on('click', function(e) {
   e.preventDefault();
   $('html, body').animate({scrollTop:0}, '300');
-  var current =  $('.active')
+  let current =  $('.active')
   current[0].classList.remove('active')
 });
 
 
+/***************REMOVE ACTIVE ON LOGO CLICK******************/
+
+let logo = document.querySelector('#logo')
+logo.addEventListener('click', e => {
+  let current =  $('.active')
+  current[0].classList.remove('active') 
+})
