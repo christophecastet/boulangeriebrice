@@ -73,25 +73,25 @@ var adresse = [
 
 let hours = [
   {
-    lundi: 'Fermé'
+    Lundi: 'Fermé'
   },
   {
-    mardi: "06h30 - 20h00"
+    Mardi: "06h30 - 20h00"
   },
   {
-    mercredi: "06h30 - 20h00"
+    Mercredi: "06h30 - 20h00"
   },
   {
-    jeudi: "06h30 - 20h00"
+    Jeudi: "06h30 - 20h00"
   },
   {
-    vendredi: "06h30 - 20h00"
+    Vendredi: "06h30 - 20h00"
   },
   {
-    samedi: "06h30 - 20h00"
+    Samedi: "06h30 - 20h00"
   },
   {
-    dimanche: "7h00 - 12h00"
+    Dimanche: "7h00 - 12h00"
   },
 
 ]
