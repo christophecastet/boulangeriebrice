@@ -66,35 +66,61 @@ var shop = $('.bouton');
 var adresse = [
   shop1 = ['10 contour de l\'Église','59700  Marcq-en-Barœul',"03 20 67 09 90"],
   shop2 = ['4 rue de Wambrechies','59520  Marquette-Lez-Lille','03 20 56 29 09 '],
-  shop3 = ['3 place de la République','59290  Wasquehal','06 06 06 06 06 '],
+  shop3 = ['3 place de la République','59290  Wasquehal','03 20 75 54 79 '],
 
 ];
 
 
-let hours = [
+let hours1= [
   {
     Lundi: 'Fermé'
   },
   {
-    Mardi: "06h30 - 20h00"
+    Mardi: "06h30 - 19h00"
   },
   {
-    Mercredi: "06h30 - 20h00"
+    Mercredi: "06h30 - 19h00"
   },
   {
-    Jeudi: "06h30 - 20h00"
+    Jeudi: "06h30 - 19h00"
   },
   {
-    Vendredi: "06h30 - 20h00"
+    Vendredi: "06h30 - 19h00"
   },
   {
-    Samedi: "06h30 - 20h00"
+    Samedi: "06h30 - 19h00"
   },
   {
-    Dimanche: "7h00 - 12h00"
+    Dimanche: "7h00 - 13h00"
   },
 
 ]
+
+let hours2= [
+  {
+    Lundi: 'Fermé'
+  },
+  {
+    Mardi: "06h30 - 19h00"
+  },
+  {
+    Mercredi: "06h30 - 19h00"
+  },
+  {
+    Jeudi: "06h30 - 19h00"
+  },
+  {
+    Vendredi: "06h30 - 19h00"
+  },
+  {
+    Samedi: "06h30 - 19h00"
+  },
+  {
+    Dimanche: "7h00 - 17h00"
+  },
+
+]
+
 
 // CREATE LIST
 
@@ -163,11 +189,12 @@ var icon = L.divIcon({
 /*************DISPLAY MODAL************/
 
 $('.bouton').click(function() {
-  handleClear('.days')
-  handleClear('.hours')
-  handleHours(hours)
+ 
   var note = $(this).attr('value');
   if (note == 1) { 
+    handleClear('.days')
+    handleClear('.hours')
+    handleHours(hours1)
     handleClear(".text_0")
     handleClear(".text_1")
     handleClear(".text_2")
@@ -180,6 +207,9 @@ $('.bouton').click(function() {
       icon:icon
     }).addTo(mymap); 
   } else if (note == 2){
+    handleClear('.days')
+    handleClear('.hours')
+    handleHours(hours2)
     handleClear(".text_0")
     handleClear(".text_1")
     handleClear(".text_2")
@@ -192,6 +222,9 @@ $('.bouton').click(function() {
         icon: icon
       }).addTo(mymap); 
   } else if (note == 3){
+    handleClear('.days')
+    handleClear('.hours')
+    handleHours(hours2)
     handleClear(".text_0")
     handleClear(".text_1")
     handleClear(".text_2")
