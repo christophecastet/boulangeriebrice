@@ -498,6 +498,8 @@ html{
 .commentLink{
     text-decoration:none;
     color:#F5F5F5;
+    margin-left:55%;
+
 }
 .commentLink:hover{
    color:#F5F5F5;
@@ -505,6 +507,11 @@ html{
 
 .shopBottom{
     height:20px;
+}
+
+.editFA {
+    color: #bbab94;
+ 
 }
 
 /************MODAL***************/
